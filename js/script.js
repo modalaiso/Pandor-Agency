@@ -68,16 +68,19 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal,.service-card,.process-step,.portfolio-card,.pricing-card,.testimonial-card,.stat-item,.container-card-charts').forEach(el => obs.observe(el));
 
 // Animated counter
-function animateCounter(el, target, prefix = '', suffix = '') {
-  let current = 0;
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target) || 0;
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+
   const duration = 1600;
   const startTime = performance.now();
 
   function update(now) {
     const progress = Math.min((now - startTime) / duration, 1);
-    current = Math.floor(progress * target);
+    const value = Math.floor(progress * target);
 
-    el.textContent = `${prefix}${current}${suffix}`;
+    el.textContent = `${prefix}${value}${suffix}`;
 
     if (progress < 1) {
       requestAnimationFrame(update);
@@ -92,17 +95,7 @@ const statsObserver = new IntersectionObserver((entries, observer) => {
     if (!entry.isIntersecting) return;
 
     const nums = entry.target.querySelectorAll('.stat-num');
-
-    nums.forEach(num => {
-      const text = num.textContent.trim();
-
-      // Extraction intelligente
-      const number = parseInt(text.replace(/[^\d]/g, '')) || 0;
-      const prefix = text.startsWith('+') ? '+' : '';
-      const suffix = text.replace(/[\d+]/g, '');
-
-      animateCounter(num, number, prefix, suffix);
-    });
+    nums.forEach(num => animateCounter(num));
 
     observer.unobserve(entry.target);
   });

@@ -332,7 +332,7 @@ section { padding:120px 60px; }
 
 /* ─── STATS ─── */
 .stats { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-.stats-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); justify-content:center; }
+.stats-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); justify-content:center; justify-items: center; }
 .stat-item { text-align:center; padding:60px 20px; border-right:1px solid var(--border); opacity:0; transform:translateY(20px); transition:opacity .6s ease,transform .6s ease; }
 .stat-item.visible { opacity:1; transform:translateY(0); }
 .stat-item:last-child { border-right:none; }
@@ -480,18 +480,19 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
 @media(max-width:900px) {
   body{cursor:auto}
   .cursor,.cursor-ring{display:none}
-  nav{padding:16px 24px; top:0; left:0; right:0; z-index:500; border-radius:0;} nav.scrolled{padding:12px 24px; top:0; left:0; right:0; border-radius:0;}
+  nav{padding:16px 24px; top:0; left:0; right:0; z-index:500; border-radius:0;} nav.scrolled{padding:12px 24px; top:0; left:0; right:0; border-radius:0; border:none; border-bottom:1px solid var(--border);}
   .nav-links{display:none}
   section{padding:80px 24px}
   .problem-grid{grid-template-columns:1fr;gap:48px}
+  .container-card-charts.visible{margin-top:0;}
   .services-grid{grid-template-columns:1fr}
   .process-steps{grid-template-columns:1fr 1fr;gap:40px}
   .process-steps::before{display:none}
   .portfolio-grid{grid-template-columns:1fr}
   .portfolio-card.large{grid-row:auto}
   .pricing-grid{grid-template-columns:1fr}
-  .stats-inner{grid-template-columns:1fr 1fr}
-  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+  .stats-inner{grid-template-columns:1fr}
+  .stat-item{border-right:none;}
   .testimonials-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr}
   .footer-bottom{padding:24px;flex-direction:column;gap:12px;text-align:center}

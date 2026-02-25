@@ -70,14 +70,6 @@
   transform: rotate(40deg);
 }
 
-.card .stat-item {
-  font-weight: bolder;
-  font-size: 4rem;
-  background: linear-gradient(45deg, #000000 4%, #fff, #000);
-  background-clip: text;
-  color: transparent;
-}
-
 .line {
   width: 100%;
   height: 1px;
