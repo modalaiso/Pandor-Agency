@@ -467,7 +467,7 @@ footer { z-index:499; border-top:1px solid var(--border); padding:60px; display:
 .footer-col ul li { margin-bottom:12px; }
 .footer-col ul li a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:300; transition:color .2s,padding-left .25s; }
 .footer-col ul li a:hover { color:var(--gold); padding-left:6px; }
-.footer-bottom { border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
+.footer-bottom { z-index:499; border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
 .footer-bottom p { font-size:13px; color:var(--muted); }
 
 /* ─── GENERIC REVEAL ─── */
