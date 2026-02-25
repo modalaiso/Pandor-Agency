@@ -3,10 +3,17 @@
   position: relative;
   width: 300px;
   height: 300px;
-  background: linear-gradient(to top, #6e582b, rgba(255, 255, 255, 0.1));
+  background: linear-gradient(to top, #6e582b, #ffffff1a);
   border-radius: 32px;
   padding: 1.6px;
   box-shadow: 0 0px 80px -10px #d4a9530d;
+  transition: transform .5s cubic-bezier(.34, 1.2, .64, 1), box-shadow .4s;
+  opacity: 0;
+  transform: translateX(50px);
+}
+.container-card-charts.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 .container-card-charts::before {
   position: absolute;

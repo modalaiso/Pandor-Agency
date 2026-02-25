@@ -10,9 +10,11 @@
         "ignore": [
           "backdrop-filter",
           "scrollbar-width",
-          "scrollbar-color"
+          "scrollbar-color",
+          "scrollbar-width: thin"
         ]
       }
-    ]
+    ],
+    "css-prefix-order": "off"
   }
 }

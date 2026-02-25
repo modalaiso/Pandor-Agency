@@ -65,7 +65,7 @@ const obs = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.reveal,.service-card,.process-step,.portfolio-card,.pricing-card,.testimonial-card,.stat-item').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal,.service-card,.process-step,.portfolio-card,.pricing-card,.testimonial-card,.stat-item,.container-card-charts').forEach(el => obs.observe(el));
 
 // Animated counter
 function animateCounter(el, target, prefix = '', suffix = '') {
