@@ -121,6 +121,7 @@
   flex-direction: column;
   padding: 20px;
   font-weight: 500;
+  font-family: 'Raleway', sans-serif;
 }
 .main-texts .title {
   background-image: linear-gradient(to top left, #92400e, #f9d86d, #a6a6a6);

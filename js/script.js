@@ -1,3 +1,58 @@
+/* HERO BLUR-WORD REVEAL  */
+(function heroBlurReveal() {
+    const h1 = document.querySelector('.hero h1');
+    if (!h1) return;
+
+    // Walk child nodes: text nodes get split by word,
+    // <em> and <br> pass through intact
+    const fragment = document.createDocumentFragment();
+
+    h1.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            // Split text into words, preserve spaces
+            const words = node.textContent.split(/(\s+)/);
+            words.forEach(part => {
+                if (/^\s+$/.test(part)) {
+                    // Pure whitespace — keep as text so line breaks work
+                    fragment.appendChild(document.createTextNode(part));
+                } else if (part.length > 0) {
+                    const span = document.createElement('span');
+                    span.className = 'hero-word';
+                    span.textContent = part;
+                    fragment.appendChild(span);
+                }
+            });
+        } else if (node.nodeName === 'BR') {
+            fragment.appendChild(node.cloneNode());
+        } else if (node.nodeName === 'EM') {
+            // Wrap em words too
+            const words = node.textContent.split(/(\s+)/);
+            words.forEach(part => {
+                if (/^\s+$/.test(part)) {
+                    fragment.appendChild(document.createTextNode(part));
+                } else if (part.length > 0) {
+                    const em = document.createElement('em');
+                    const span = document.createElement('span');
+                    span.className = 'hero-word';
+                    span.textContent = part;
+                    em.appendChild(span);
+                    fragment.appendChild(em);
+                }
+            });
+        }
+    });
+    h1.innerHTML = '';
+    h1.appendChild(fragment);
+
+    // Stagger each word reveal
+    const words = h1.querySelectorAll('.hero-word');
+    words.forEach((word, i) => {
+        setTimeout(() => {
+            word.classList.add('lit');
+        }, 300 + i * 55); // starts at 300ms, 55ms between each word
+    });
+})();
+
 /* ─── LERP ─── */
 function lerp(a, b, t) { return a + (b - a) * t; }
 
