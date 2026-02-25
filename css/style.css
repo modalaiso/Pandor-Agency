@@ -494,7 +494,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .stats-inner{grid-template-columns:1fr}
   .stat-item{border-right:none;}
   .testimonials-grid{grid-template-columns:1fr}
-  footer{grid-template-columns:1fr 1fr}
+  footer{grid-template-columns:1fr}
   .footer-bottom{padding:24px;flex-direction:column;gap:12px;text-align:center}
   .cta-section{padding:100px 24px}
 }
