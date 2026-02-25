@@ -459,7 +459,7 @@ section { padding:120px 60px; }
 .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
 
 /* ─── FOOTER ─── */
-footer { z-index:499; border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px; }
+footer { position:relative; z-index:499; border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px; }
 .footer-logo { font-family:'Raleway', sans-serif; font-size:24px; font-weight:600; color:var(--gold); margin-bottom:16px; }
 .footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:220px; }
 .footer-col h5 { font-size:13px; font-weight:500; color:var(--white); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
@@ -467,7 +467,7 @@ footer { z-index:499; border-top:1px solid var(--border); padding:60px; display:
 .footer-col ul li { margin-bottom:12px; }
 .footer-col ul li a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:300; transition:color .2s,padding-left .25s; }
 .footer-col ul li a:hover { color:var(--gold); padding-left:6px; }
-.footer-bottom { z-index:499; border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
+.footer-bottom { position:relative; z-index:499; border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
 .footer-bottom p { font-size:13px; color:var(--muted); }
 
 /* ─── GENERIC REVEAL ─── */
