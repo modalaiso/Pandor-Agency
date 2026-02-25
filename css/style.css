@@ -55,7 +55,6 @@ img {
   height: 100%;
 }
 
-
 /* ─── CURSOR ─── */
 .cursor {
   position: fixed;
@@ -94,16 +93,15 @@ body::before {
   height: auto;
 }
 nav {
-  position:fixed; top:3rem; left:5rem; right:5rem; z-index:500;
+  position:fixed; top:0rem; left:0rem; right:0rem; z-index:500;
   display:flex; align-items:center; justify-content:space-between;
   padding:20px 60px;
   background:rgba(10, 9, 5, 0.315);
   backdrop-filter:blur(24px);
-  border:1px solid var(--border);
+  border-bottom:1px solid var(--border);
   transition:.4s ease;
-  border-radius:999px;
 }
-nav.scrolled { right:18rem; left:18rem; top:4rem; padding:13px 60px; background:rgba(10, 9, 5, 0.384); }
+nav.scrolled { right:18rem; left:18rem; top:4rem; padding:13px 60px; background:rgba(10, 9, 5, 0.384);border:1px solid var(--border);border-radius:999px; }
 .nav-logo { font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--gold); letter-spacing:.05em; text-decoration:none;display: flex;align-items: center;gap: 9px; }
 .nav-links { display:flex; gap:40px; list-style:none; }
 .nav-links a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:400; transition:color .2s; }
