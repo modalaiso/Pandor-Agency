@@ -459,7 +459,7 @@ section { padding:120px 60px; }
 .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
 
 /* ─── FOOTER ─── */
-footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px; }
+footer { z-index:499; border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px; }
 .footer-logo { font-family:'Raleway', sans-serif; font-size:24px; font-weight:600; color:var(--gold); margin-bottom:16px; }
 .footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:220px; }
 .footer-col h5 { font-size:13px; font-weight:500; color:var(--white); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
@@ -499,9 +499,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .cta-section{padding:100px 24px}
 }
 
-/* ═══════════════════════════════════════════════════════
-   GLASS STAT CARDS — Apple style
-═══════════════════════════════════════════════════════ */
+/* GLASS STAT CARDS — Apple style */
 .stats-glass-section {
   padding: 80px 60px;
   background: var(--bg);
@@ -650,8 +648,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   transform: translateX(-50%);
   width: 120%;
   height: 180px;
-
-  z-index: 9998;
+  z-index: 498;
   pointer-events: none;
 
   /* Fond légèrement teinté — REQUIS pour que backdrop-filter soit visible */
