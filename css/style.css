@@ -445,7 +445,7 @@ section { padding:120px 60px; }
 .author-role { font-size:12px; color:var(--muted); }
 
 /* FAQ */
-.faq { background:var(--bg2); border-top:1px solid var(--border); }
+.faq { background:linear-gradient(to bottom, var(--bg2) 60%, var(--bg)); border-top:1px solid var(--border); }
 .faq-inner { max-width:800px; margin:0 auto; }
 .faq-header { text-align:center; margin-bottom:60px; }
 .faq-item { border-bottom:1px solid var(--border); }
@@ -458,7 +458,7 @@ section { padding:120px 60px; }
 .faq-icon.rotated { transform:rotate(45deg); }
 
 /* CTA */
-.cta-section { text-align:center; padding:160px 60px; position:relative; overflow:hidden; }
+.cta-section { text-align:center; padding:160px 60px; position:relative; overflow:hidden; border-top: 1px solid var(--muted); max-width: 1100px; margin: 0 auto; border-radius: 115px 115px 0 0; }
 .cta-glow { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:800px; background:radial-gradient(ellipse,rgba(212,168,83,.09) 0%,transparent 65%); pointer-events:none; animation:breathe 8s ease-in-out infinite; }
 .cta-section h2 { font-family:var(--font-display); font-size:clamp(40px,6vw,80px); font-weight:300; line-height:1.1; margin-bottom:24px; position:relative; }
 .cta-section h2 em { font-style:italic; color:var(--gold); }
@@ -468,12 +468,14 @@ section { padding:120px 60px; }
 /* FOOTER */
 footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;position:relative; z-index:499; }
 .footer-logo { font-family:'Raleway', sans-serif; font-size:24px; font-weight:600; color:var(--gold); margin-bottom:16px; }
-.footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:220px; }
+.footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:250px; }
 .footer-col h5 { font-size:13px; font-weight:500; color:var(--white); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
 .footer-col ul { list-style:none; }
 .footer-col ul li { margin-bottom:12px; }
-.footer-col ul li a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:300; transition:color .2s,padding-left .25s; }
-.footer-col ul li a:hover { color:var(--gold); padding-left:6px; }
+.link-footer { color:var(--muted); text-decoration:none; font-size:14px; font-weight:300; transition:color .2s,padding-left .25s; }
+.link-footer:hover { color:var(--gold); padding-left:6px; }
+.social-network { color:var(--muted); transition:color .2s; }
+.social-network:hover { color:var(--gold); }
 .footer-bottom { border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:499; }
 .footer-bottom p { font-size:13px; color:var(--muted); }
 
@@ -509,139 +511,9 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .testimonials-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr}
   .footer-bottom{padding:24px;flex-direction:column;gap:12px;text-align:center}
-  .cta-section{padding:100px 24px}
+  .cta-section{padding:100px 24px; border-radius:0;}
 }
 
-/* GLASS STAT CARDS */
-.stats-glass-section {
-  padding: 80px 60px;
-  background: var(--bg);
-  position: relative;
-}
-
-.stats-glass-grid {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* ── The card itself ── */
-.stat-glass-card {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 44px 32px 40px;
-  /* Core Apple glass */
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: saturate(180%) blur(28px);
-  -webkit-backdrop-filter: saturate(180%) blur(28px);
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow:
-    0 2px 0 rgba(255,255,255,0.06) inset,      /* top specular */
-    0 -1px 0 rgba(0,0,0,0.4) inset,             /* bottom shadow */
-    0 20px 60px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(0,0,0,0.25);
-  cursor: default;
-  transition: transform .4s cubic-bezier(.34,1.3,.64,1), box-shadow .4s;
-  opacity: 0;
-  transform: translateY(28px);
-}
-.stat-glass-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.stat-glass-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow:
-    0 2px 0 rgba(255,255,255,0.08) inset,
-    0 -1px 0 rgba(0,0,0,0.4) inset,
-    0 32px 80px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,220,120,0.1);
-}
-
-/* Central glow spot (the signature Apple "light from within") */
-.stat-glass-glow {
-  position: absolute;
-  top: -40%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 80%;
-  background: radial-gradient(
-    ellipse at 50% 30%,
-    rgba(255,255,255,0.07) 0%,
-    rgba(255,255,255,0.02) 40%,
-    transparent 70%
-  );
-  pointer-events: none;
-  transition: opacity .4s;
-}
-.stat-glass-card:hover .stat-glass-glow {
-  background: radial-gradient(
-    ellipse at 50% 30%,
-    rgba(212,168,83,0.10) 0%,
-    rgba(212,168,83,0.03) 40%,
-    transparent 70%
-  );
-}
-
-/* Corner bracket marks — the "screen border" detail in the image */
-.stat-glass-corner {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: rgba(255,255,255,0.13);
-  border-style: solid;
-}
-.stat-glass-corner.tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; border-radius: 3px 0 0 0; }
-.stat-glass-corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; border-radius: 0 3px 0 0; }
-.stat-glass-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; border-radius: 0 0 0 3px; }
-.stat-glass-corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; border-radius: 0 0 3px 0; }
-
-/* Content */
-.stat-glass-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.stat-glass-num {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 5vw, 72px);
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 12px;
-  /* Silver/white gradient like Apple's product numbers */
-  background: linear-gradient(
-    165deg,
-    rgba(255,255,255,0.95) 0%,
-    rgba(200,195,185,0.80) 50%,
-    rgba(160,155,145,0.65) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -.02em;
-}
-
-.stat-glass-label {
-  font-size: 13px;
-  color: rgba(200,195,185,0.55);
-  font-weight: 300;
-  letter-spacing: .04em;
-  line-height: 1.5;
-  text-transform: none;
-}
-
-/* Stagger reveal */
-.stats-glass-grid .stat-glass-card:nth-child(1) { transition-delay: .05s; }
-.stats-glass-grid .stat-glass-card:nth-child(2) { transition-delay: .12s; }
-.stats-glass-grid .stat-glass-card:nth-child(3) { transition-delay: .19s; }
-.stats-glass-grid .stat-glass-card:nth-child(4) { transition-delay: .26s; }
-.stats-glass-grid .stat-glass-card:nth-child(5) { transition-delay: .33s; }
-.stats-glass-grid .stat-glass-card:nth-child(6) { transition-delay: .40s; }
 
 /* Responsive */
 @media(max-width:900px) {
