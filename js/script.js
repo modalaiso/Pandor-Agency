@@ -53,10 +53,10 @@
     });
 })();
 
-/* ─── LERP ─── */
+/* LERP */
 function lerp(a, b, t) { return a + (b - a) * t; }
 
-/* ─── SMOOTH SCROLL (desktop only) ─── */
+/* SMOOTH SCROLL (desktop only) */
 if (window.innerWidth > 900) {
     let current = window.scrollY;
     let target = window.scrollY;
@@ -95,7 +95,7 @@ if (window.innerWidth > 900) {
     tick();
 }
 
-/* ─── CURSOR ─── */
+/* CURSOR */
 const cur = document.getElementById('cur');
 const curRing = document.getElementById('curRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -106,11 +106,11 @@ document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cu
     requestAnimationFrame(animRing);
 })();
 
-/* ─── NAV SHRINK ─── */
+/* NAV SHRINK */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
 
-/* ─── INTERSECTION OBSERVER ─── */
+/* INTERSECTION OBSERVER */
 const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
         if (e.isIntersecting) {
@@ -173,7 +173,7 @@ const pcObs = new IntersectionObserver(entries => {
 const pc = document.getElementById('problemCards');
 if (pc) pcObs.observe(pc);
 
-/* ─── TEXT INK REVEAL: gray → white on scroll ─── */
+/* TEXT INK REVEAL: gray → white on scroll */
 function checkInk() {
     const vh = window.innerHeight;
     document.querySelectorAll('.ink-line').forEach(el => {
@@ -191,7 +191,7 @@ function checkInk() {
 window.addEventListener('scroll', checkInk, { passive: true });
 checkInk();
 
-/* ─── PARALLAX GLOW ─── */
+/* PARALLAX GLOW */
 document.addEventListener('mousemove', e => {
     const g = document.querySelector('.hero-glow');
     if (!g) return;
@@ -200,12 +200,12 @@ document.addEventListener('mousemove', e => {
     g.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
 });
 
-/* ─── FAQ ─── */
-    function toggleFaq(btn) {
-        const a = btn.nextElementSibling;
-        const ic = btn.querySelector('.faq-icon');
-        const open = a.classList.contains('open');
-        document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
-        document.querySelectorAll('.faq-icon').forEach(x => x.classList.remove('rotated'));
-        if (!open) { a.classList.add('open'); ic.classList.add('rotated'); }
-    }
+/* FAQ */
+function toggleFaq(btn) {
+    const a = btn.nextElementSibling;
+    const ic = btn.querySelector('.faq-icon');
+    const open = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(x => x.classList.remove('rotated'));
+    if (!open) { a.classList.add('open'); ic.classList.add('rotated'); }
+}
