@@ -3,7 +3,7 @@
   --bg2: #100e09;
   --surface: #161410;
   --border: rgba(255,220,120,0.1);
-  --gold: #D4A853;
+  --gold: #d4a953;
   --gold-light: #F0C97A;
   --white: #F5F0E8;
   --muted: #7a7060;
@@ -20,6 +20,12 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+
+::selection {
+    background-color: #D4A853ad;
+    color: var(--bg);
+}
+
 ::-webkit-scrollbar-button {
   display: none;
 }
