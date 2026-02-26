@@ -47,12 +47,17 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--gold) transparent;
+  cursor: none;
 }
 
 img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+a {
+text-decoration: none;
 }
 
 /* CURSOR */
@@ -106,7 +111,8 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 .nav-links { display:flex; gap:40px; list-style:none; }
 .nav-links a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:400; transition:color .2s; }
 .nav-links a:hover { color:var(--white); }
-.btn-nav { background:var(--gold); color:#0a0905; font-weight:500; font-size:14px; padding:10px 22px; border-radius:999px; text-decoration:none; transition:background .2s,transform .2s; }
+.btn-nav { background:var(--gold); color:#0a0905; font-weight:500; font-size:14px; padding:10px 22px; border-radius:999px; text-decoration:none; transition:background .2s,transform .2s; border: 1px solid var(--gold-light); font-family: var(--font-body); }
+.btn-nav a{display:flex; justify-content:center; align-items:center; gap:8px;}
 .btn-nav:hover { background:var(--gold-light); transform:translateY(-1px); }
 
 /* HERO */
@@ -206,14 +212,15 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 
 /* BUTTONS */
 .btn-primary {
-  background:var(--gold); color:#0a0905;
+  background:linear-gradient(to bottom,var(--gold),#8f7238); color:#0a0905;
   font-weight:500; font-size:15px; padding:14px 32px;
   border-radius:999px; text-decoration:none;
-  transition:background .2s,transform .25s,box-shadow .3s;
+  transition:transform .25s,box-shadow .3s;
   box-shadow:0 0 40px rgba(212,168,83,.25);
+  border: none;
+  font-family: var(--font-body);
 }
 .btn-primary:hover { 
-  background:var(--gold-light); 
   transform:translateY(-2px); box-shadow:0 0 70px rgba(212,168,83,.5); }
 .btn-secondary {
   color:var(--white); 
