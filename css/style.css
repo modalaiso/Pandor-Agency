@@ -149,7 +149,7 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
   display:inline-flex; align-items:center; gap:10px;
   background:rgba(201,168,76,0.1); border:1px solid var(--border);
   border-radius:999px; padding:6px 18px 6px 6px;
-  margin-bottom:40px; position:relative; z-index:1;
+  margin-bottom:40px; position:relative; z-index:499;
   opacity:0; animation:fadeUp .8s .2s ease forwards;
 }
 @keyframes shimmerBorder { from{background-position:-200% 0} to{background-position:200% 0} }
@@ -159,7 +159,7 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 .hero h1 {
   font-family:var(--font-display); font-size:clamp(52px,7vw,96px);
   font-weight:300; line-height:1.05; letter-spacing:-.01em;
-  margin-bottom:28px; position:relative; z-index:1;
+  margin-bottom:28px; position:relative; z-index:499;
   /*opacity:0; animation:fadeUp .9s .4s ease forwards;*/
 }
 .hero h1 em { font-style:italic; color:var(--gold); }
@@ -167,12 +167,12 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 .hero-sub {
   max-width:560px; font-size:17px; font-weight:300;
   color:var(--muted); line-height:1.7; margin-bottom:48px;
-  position:relative; z-index:1;
+  position:relative; z-index:499;
   opacity:0; animation:fadeUp .9s .85s cubic-bezier(.22,1,.36,1) forwards;
 }
 .hero-ctas {
   display:flex; gap:16px; align-items:center; flex-wrap:wrap;
-  justify-content:center; position:relative; z-index:1;
+  justify-content:center; position:relative; z-index:499;
   opacity:0; animation:fadeUp .9s 1.05s cubic-bezier(.22,1,.36,1) forwards;
 }
 
@@ -459,7 +459,7 @@ section { padding:120px 60px; }
 .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
 
 /* ─── FOOTER ─── */
-footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px; }
+footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;position:relative; z-index:499; }
 .footer-logo { font-family:'Raleway', sans-serif; font-size:24px; font-weight:600; color:var(--gold); margin-bottom:16px; }
 .footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:220px; }
 .footer-col h5 { font-size:13px; font-weight:500; color:var(--white); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
@@ -467,16 +467,16 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
 .footer-col ul li { margin-bottom:12px; }
 .footer-col ul li a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:300; transition:color .2s,padding-left .25s; }
 .footer-col ul li a:hover { color:var(--gold); padding-left:6px; }
-.footer-bottom { border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; }
+.footer-bottom { border-top:1px solid var(--border); padding:24px 60px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:499; }
 .footer-bottom p { font-size:13px; color:var(--muted); }
 
-/* ─── GENERIC REVEAL ─── */
+/* GENERIC REVEAL */
 .reveal { opacity:0; transform:translateY(36px); transition:opacity .8s ease,transform .8s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media(max-width:900px) {
   body{cursor:auto}
   .cursor,.cursor-ring{display:none}
@@ -499,9 +499,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .cta-section{padding:100px 24px}
 }
 
-/* ═══════════════════════════════════════════════════════
-   GLASS STAT CARDS — Apple style
-═══════════════════════════════════════════════════════ */
+/* GLASS STAT CARDS */
 .stats-glass-section {
   padding: 80px 60px;
   background: var(--bg);
@@ -650,8 +648,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   transform: translateX(-50%);
   width: 120%;
   height: 180px;
-
-  z-index: 9998;
+  z-index: 498;
   pointer-events: none;
 
   /* Fond légèrement teinté — REQUIS pour que backdrop-filter soit visible */
