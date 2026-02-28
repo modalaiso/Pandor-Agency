@@ -2,7 +2,7 @@
   --bg: #0a0905;
   --bg2: #100e09;
   --surface: #161410;
-  --border: rgba(255,220,120,0.1);
+  --border: #ffdc781a;
   --gold: #d4a953;
   --gold-light: #F0C97A;
   --white: #F5F0E8;
@@ -107,7 +107,7 @@ nav {
   position:fixed; top:0rem; left:0rem; right:0rem; z-index:500;
   display:flex; align-items:center; justify-content:space-between;
   padding:20px 60px;
-  background:rgba(10, 9, 5, 0.315);
+  background:#0a090550;
   backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
   transition:.4s ease;
@@ -117,9 +117,19 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 .nav-links { display:flex; gap:40px; list-style:none; }
 .nav-links a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:400; transition:color .2s; }
 .nav-links a:hover { color:var(--white); }
-.btn-nav { background:var(--gold); color:#0a0905; font-weight:500; font-size:14px; padding:10px 22px; border-radius:999px; text-decoration:none; transition:background .2s,transform .2s; border: 1px solid var(--gold-light); font-family: var(--font-body); }
-.btn-nav a{display:flex; justify-content:center; align-items:center; gap:8px;}
+.btn-nav { background:var(--gold); color:#0a0905; font-weight:500; font-size:14px; padding:10px 22px; border-radius:999px; text-decoration:none; transition:background .2s,transform .2s; border: 1px solid var(--gold-light); font-family: var(--font-body);display:flex; justify-content:center; align-items:center; gap:8px;}
 .btn-nav:hover { background:var(--gold-light); transform:translateY(-1px); }
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+  .link_btn-nav {
+    display: none;
+  }
+}
 
 /* HERO */
 .hero {
@@ -161,17 +171,17 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
   display:inline-flex; align-items:center; gap:10px;
   background:rgba(201,168,76,0.1); border:1px solid var(--border);
   border-radius:999px; padding:6px 18px 6px 6px;
-  margin-bottom:40px; position:relative; z-index:499;
+  margin-bottom:40px; position:relative; z-index:498;
   opacity:0; animation:fadeUp .8s .2s ease forwards;
 }
 @keyframes shimmerBorder { from{background-position:-200% 0} to{background-position:200% 0} }
-.badge-pill { background:var(--gold); color:#0a0905; font-size:12px; font-weight:700; padding:4px 12px; border-radius:999px; letter-spacing:.04em; }
+.badge-pill { background:var(--gold); color:#0a0905; border-top: 2px solid var(--gold-light); font-size:12px; font-weight:700; padding:4px 12px; border-radius:999px; letter-spacing:.04em; }
 .badge-text { font-size:13px; color:var(--muted); letter-spacing:.02em; }
 
 .hero h1 {
   font-family:var(--font-display); font-size:clamp(52px,7vw,96px);
   font-weight:300; line-height:1.05; letter-spacing:-.01em;
-  margin-bottom:28px; position:relative; z-index:499;
+  margin-bottom:28px; position:relative; z-index:498;
   /*opacity:0; animation:fadeUp .9s .4s ease forwards;*/
 }
 .hero h1 em { font-style:italic; color:var(--gold); }
@@ -179,12 +189,12 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
 .hero-sub {
   max-width:560px; font-size:17px; font-weight:300;
   color:var(--muted); line-height:1.7; margin-bottom:48px;
-  position:relative; z-index:499;
+  position:relative; z-index:498;
   opacity:0; animation:fadeUp .9s .85s cubic-bezier(.22,1,.36,1) forwards;
 }
 .hero-ctas {
   display:flex; gap:16px; align-items:center; flex-wrap:wrap;
-  justify-content:center; position:relative; z-index:499;
+  justify-content:center; position:relative; z-index:498;
   opacity:0; animation:fadeUp .9s 1.05s cubic-bezier(.22,1,.36,1) forwards;
 }
 
@@ -200,7 +210,7 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
   gap:8px;
   opacity:0; 
   animation:fadeUp .9s 1.2s ease forwards; 
-  z-index:499;
+  z-index:498;
 }
 .scroll-hint span { 
   font-size:10px; 
@@ -228,6 +238,7 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
   display: flex;
   align-items: center;
   gap: 8px;
+  border-top: 2px solid var(--gold-light);
 }
 .btn-primary:hover { 
   transform:translateY(-2px); box-shadow:0 0 70px rgba(212,168,83,.5); }
@@ -432,7 +443,7 @@ section { padding:120px 60px; }
 .btn-pricing { display:block; text-align:center; padding:14px; border-radius:999px; text-decoration:none; font-size:14px; font-weight:500; transition:all .3s; }
 .btn-pricing-outline { border:1px solid var(--border); color:var(--white); }
 .btn-pricing-outline:hover { border-color:var(--gold); color:var(--gold); background:rgba(212,168,83,.05); }
-.btn-pricing-solid { background:var(--gold); color:#0a0905; }
+.btn-pricing-solid { background:var(--gold); color:#0a0905; border-top: 2px solid var(--gold-light); }
 .btn-pricing-solid:hover { background:var(--gold-light); transform:translateY(-1px); box-shadow:0 10px 30px rgba(212,168,83,.3); }
 
 /* TESTIMONIALS */
@@ -475,7 +486,7 @@ section { padding:120px 60px; }
 .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
 
 /* FOOTER */
-footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;position:relative; z-index:499; }
+footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;position:relative; z-index:498; }
 .footer-logo { font-family:'Raleway', sans-serif; font-size:24px; font-weight:600; color:var(--gold); margin-bottom:16px; }
 .footer-tagline { font-size:13px; color:var(--muted); line-height:1.7; max-width:250px; }
 .footer-col h5 { font-size:13px; font-weight:500; color:var(--white); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
@@ -502,7 +513,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
 }
 
 @media(max-width:900px) {
-  body{cursor:auto}
+  *{cursor:auto}
   .cursor,.cursor-ring{display:none}
   nav{padding:16px 24px; top:0; left:0; right:0; z-index:500; border-radius:0;} nav.scrolled{padding:12px 24px; top:0; left:0; right:0; border-radius:0; border:none; border-bottom:1px solid var(--border);}
   .nav-links{display:none}
@@ -541,9 +552,9 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120%;
+  width: 100%;
   height: 180px;
-  z-index: 498;
+  z-index: 497;
   pointer-events: none;
 
   /* Fond légèrement teinté — REQUIS pour que backdrop-filter soit visible */

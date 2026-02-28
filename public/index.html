@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/wise-stingray.css" />
   <link rel="stylesheet" href="css/moody-owl.css" />
   <link rel="stylesheet" href="css/visual.css" />
+  <link rel="stylesheet" href="css/menu-toggle.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -34,14 +35,52 @@
       <li><a href="#pricing">Tarifs</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#"><button class="btn-nav" style="display:flex; align-items:center; gap:8px;">Audit Gratuit <svg
-        style="width: 18px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-arrow-right-icon lucide-arrow-right">
-        <path d="M5 12h14" />
-        <path d="m12 5 7 7-7 7" />
-      </svg></button></a>
+    <a class="link_btn-nav" href="#">
+      <button class="btn-nav">Audit Gratuit 
+        <svg
+          style="width: 18px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-right-icon lucide-arrow-right">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </button>
+    </a>
+
+    <!--MENU TOGGLE-->
+    <div class="menu-toggle">
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
   </nav>
+  <div class="menu-toggle">
+    <!-- Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+    <!-- MENU -->
+    <div class="nav-menu" id="navMenu" role="dialog" aria-modal="true" aria-label="Menu de navigation" hidden>
+      <ul class="nav-menu__list">
+        <li class="nav-menu__item"><a href="#services">Services</a></li>
+        <li class="nav-menu__item"><a href="#portfolio">Portfolio</a></li>
+        <li class="nav-menu__item"><a href="#process">Processus</a></li>
+        <li class="nav-menu__item"><a href="#pricing">Tarifs</a></li>
+        <li class="nav-menu__item"><a href="#faq">FAQ</a></li>
+
+      </ul>        
+    <a href="#" style="margin: 0 auto; width: 86%; height: auto">
+      <button class="btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center;">Audit Gratuit 
+        <svg
+          style="width: 18px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-right-icon lucide-arrow-right">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </button>
+    </a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="accueil">
@@ -828,5 +867,6 @@
   </div>
   <div class="glass-footer"></div>
   <script src="js/script.js"></script>
+  <script src="js/menu-toggle.js" defer></script>
 </body>
 </html>

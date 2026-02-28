@@ -56,31 +56,35 @@
 /* LERP */
 function lerp(a, b, t) { return a + (b - a) * t; }
 
-/* SMOOTH SCROLL (desktop only) */
+/* SMOOTH SCROLL lerp (desktop only) */
 if (window.innerWidth > 900) {
     let current = window.scrollY;
-    let target = window.scrollY;
+    let target  = window.scrollY;
     let wheelAcc = 0;
 
+    /* Roue souris */
     window.addEventListener('wheel', e => {
         e.preventDefault();
         wheelAcc += e.deltaY * 0.85;
     }, { passive: false });
 
-    // Also handle anchor clicks
+    /* Clic ancre sur la même page : #services, #portfolio… */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
-            const id = a.getAttribute('href').slice(1);
-            const el = document.getElementById(id);
+            const hash = a.getAttribute('href');
+            if (hash === '#' || hash === '') return;
+            const el = document.querySelector(hash);
             if (el) {
                 e.preventDefault();
-                target = el.getBoundingClientRect().top + window.scrollY - 80;
-                current = target; // snap to avoid drift
+                target  = el.getBoundingClientRect().top + window.scrollY - 80;
+                current = target;   // snap : évite la dérive
                 wheelAcc = 0;
+                history.pushState(null, '', hash);
             }
         });
     });
 
+    /* Boucle lerp */
     function tick() {
         wheelAcc = lerp(wheelAcc, 0, 0.1);
         if (Math.abs(wheelAcc) < 0.05) wheelAcc = 0;
@@ -93,6 +97,56 @@ if (window.innerWidth > 900) {
         requestAnimationFrame(tick);
     }
     tick();
+
+    /* ── CROSS-PAGE : arrivée depuis réalisations.html avec /#services ──
+       Le navigateur charge index.html#services → on lit le hash et on
+       repositionne current + target dans le moteur lerp.               */
+    (function scrollToHashOnLoad() {
+        const hash = window.location.hash;   // ex : "#services"
+        if (!hash) return;
+
+        const tryScroll = (attempts = 0) => {
+            const el = document.querySelector(hash);
+            if (el) {
+                // Léger délai pour que les animations CSS soient prêtes
+                setTimeout(() => {
+                    const dest = el.getBoundingClientRect().top + window.scrollY - 80;
+                    // Injecte directement dans le moteur lerp
+                    current  = dest;
+                    target   = dest;
+                    wheelAcc = 0;
+                    window.scrollTo(0, dest);
+                }, 150);
+            } else if (attempts < 10) {
+                setTimeout(() => tryScroll(attempts + 1), 100);
+            }
+        };
+        tryScroll();
+    })();
+
+} else {
+    /* ── Mobile : scroll natif CSS ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const hash = a.getAttribute('href');
+            if (hash === '#' || hash === '') return;
+            const el = document.querySelector(hash);
+            if (el) {
+                e.preventDefault();
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', hash);
+            }
+        });
+    });
+
+    /* Cross-page mobile */
+    const hash = window.location.hash;
+    if (hash) {
+        setTimeout(() => {
+            const el = document.querySelector(hash);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+    }
 }
 
 /* CURSOR */
