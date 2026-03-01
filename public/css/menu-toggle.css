@@ -38,7 +38,7 @@
   position: fixed;
   inset: 0;
   background: #0a090550;
-  backdrop-filter: blur(3px)
+  backdrop-filter: blur(3px);
   z-index: 499;
   opacity: 0;
   pointer-events: none;
