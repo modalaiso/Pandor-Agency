@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/modalaiso/Pandor-Agency#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
   }
 }
