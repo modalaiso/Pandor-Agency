@@ -30,7 +30,7 @@
         <div class="cal-modal-header">
           <div class="cal-modal-title">
             <span class="cal-modal-dot"></span>
-            <span class="cal-modal-label">Réserver un appel de 20 min</span>
+            <span class="cal-modal-label">https://cal.com/pandor.agency/20min</span>
           </div>
           <button class="cal-modal-close" id="calClose" aria-label="Fermer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
