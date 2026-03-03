@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/moody-owl.css" />
   <link rel="stylesheet" href="css/visual.css" />
   <link rel="stylesheet" href="css/menu-toggle.css" />
+  <link rel="stylesheet" href="css/cal-modal.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -827,7 +828,7 @@
       </div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Combien de temps pour livrer ma landing page ?<span class="faq-icon">+</span></button>
         <div class="faq-a">
-          <p>Nous livrons en 7 jours pour les formules Premium et Évolution, et en 12 jours pour la formule Starter. Dès la validation de votre brief et du paiement, notre équipe se met au travail immédiatement.</p>
+          <p>Nous livrons en 7 jours. Dès la validation de votre brief et du paiement, notre équipe se met au travail immédiatement.</p>
         </div>
       </div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Est-ce que je peux modifier ma page après livraison ?<span class="faq-icon">+</span></button>
@@ -840,9 +841,9 @@
           <p>Un site classique a plusieurs pages et sert à informer. Une landing page est une page unique ultra-focalisée sur un objectif : la réservation. Elle est structurée psychologiquement pour guider le visiteur vers l'action.</p>
         </div>
       </div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Travaillez-vous avec tous types de restaurants ?<span class="faq-icon">+</span></button>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Avec qui travaillez-vous ?<span class="faq-icon">+</span></button>
         <div class="faq-a">
-          <p>Oui : brasseries, restaurants gastronomiques, bistrots, food trucks, dark kitchens, hôtels-restaurants, traiteurs... Nous adaptons toujours le design et le copywriting au positionnement de votre établissement. Chaque page est unique.</p>
+          <p>Oui : brasseries, restaurants gastronomiques, bistrots, food trucks, dark kitchens, hôtels-restaurants, traiteurs, dans certains des entreprises, PME etc. Nous adaptons toujours le design et le copywriting au positionnement de votre établissement. Chaque page est unique.</p>
         </div>
       </div>
     </div>
@@ -908,5 +909,20 @@
   <div class="glass-footer"></div>
   <script src="js/script.js"></script>
   <script src="js/menu-toggle.js" defer></script>
+  <script src="js/cal-modal.js" defer></script>
+  <!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "20min", {origin:"https://app.cal.com"});
+
+  
+  // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+  // `data-cal-link="pandor-agence/20min"`
+  // data-cal-namespace="20min"
+  // `data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'`
+
+  Cal.ns["20min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#0a0905"},"dark":{"cal-brand":"#d4a953"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
 </body>
 </html>

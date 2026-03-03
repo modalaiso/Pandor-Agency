@@ -1,0 +1,201 @@
+/* ── CAL.COM BOOKING MODAL ── */
+
+/* Overlay */
+.cal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 4, 2, 0.82);
+  backdrop-filter: blur(5px) saturate(120%);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Modal container */
+.cal-modal {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: min(80vh, 700px);
+  background: radial-gradient(ellipse at 10% 0%, #1a1508, #0a0905 70%);
+  border: 1px solid rgba(212, 168, 83, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 83, 0.06) inset,
+    0 40px 120px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(212, 168, 83, 0.04);
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cal-overlay.is-open .cal-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Top bar */
+.cal-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+  flex-shrink: 0;
+}
+
+.cal-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cal-modal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold, #d4a853);
+  box-shadow: 0 0 10px rgba(212, 168, 83, 0.6);
+  animation: pulse-dot 2.4s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.cal-modal-label {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(212, 168, 83, 0.7);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Close button */
+.cal-modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  background: rgba(212, 168, 83, 0.05);
+  color: rgba(245, 240, 232, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.cal-modal-close:hover {
+  background: rgba(212, 168, 83, 0.12);
+  border-color: rgba(212, 168, 83, 0.35);
+  color: var(--gold, #d4a853);
+  transform: rotate(90deg);
+}
+
+.cal-modal-close svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}
+
+/* iFrame wrapper */
+.cal-modal-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.cal-modal-body iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: transparent;
+}
+
+/* Loading state */
+.cal-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #0a0905;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.cal-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cal-spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(212, 168, 83, 0.12);
+  border-top-color: rgba(212, 168, 83, 0.7);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cal-loading-text {
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  font-size: 13px;
+  color: rgba(122, 112, 96, 0.6);
+  letter-spacing: 0.05em;
+}
+
+/* Ambient glow in corner */
+.cal-modal::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.07), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .cal-modal {
+    max-width: 100%;
+    height: 90vh;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(40px);
+  }
+
+  .cal-overlay.is-open .cal-modal {
+    transform: translateY(0);
+  }
+}
