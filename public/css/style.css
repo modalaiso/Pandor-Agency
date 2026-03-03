@@ -240,6 +240,9 @@ nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 60px; background:
   gap: 8px;
   border-top: 2px solid var(--gold-light);
 }
+.btn-primary svg:hover {
+transform:translateX(-3px);
+}
 .btn-primary:hover { 
   transform:translateY(-2px); box-shadow:0 0 70px rgba(212,168,83,.5); }
 .btn-secondary {
