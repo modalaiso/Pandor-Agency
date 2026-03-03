@@ -183,10 +183,10 @@
 
 /* Mobile */
 @media (max-width: 600px) {
-  .cal-overlay {
+  /*.cal-overlay {
     padding: 0;
     align-items: flex-end;
-  }
+  }*/
 
   .cal-modal {
     max-width: 100%;
