@@ -21,6 +21,8 @@
       {
         "link-name": "off"
       }
-    ]
+    ],
+    "manifest-exists": "off",
+    "apple-touch-icons": "off"
   }
 }
