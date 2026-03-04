@@ -18,10 +18,25 @@
     flex-shrink: 0;
 }
 
-/* cards list */
-.sc-list { display: flex; flex-direction: column; gap: 14px; }
+/* cards list — horizontal carousel */
+.sc-carousel {
+    position: relative;
+}
+.sc-list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.sc-list::-webkit-scrollbar { display: none; }
 
 .sc-card {
+    min-width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
     display: grid;
     grid-template-columns: 1fr 1.85fr;
     border: 1px solid var(--border);
@@ -87,6 +102,36 @@
 .sc-card:hover .sc-cta { color: var(--gold); gap: 12px; }
 .sc-cta svg { transition: transform .2s; }
 .sc-card:hover .sc-cta svg { transform: translateX(3px); }
+
+/* carousel nav buttons */
+.sc-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, opacity .2s;
+}
+.sc-nav:hover {
+    background: rgba(212,168,83,.1);
+    border-color: rgba(212,168,83,.35);
+    color: var(--gold);
+}
+.sc-nav:disabled {
+    opacity: .25;
+    pointer-events: none;
+}
+.sc-nav--left { left: -24px; }
+.sc-nav--right { right: -24px; }
 
 /* visual */
 .sc-visual {
@@ -273,6 +318,8 @@
     .sc-card{grid-template-columns:1fr 1.4fr;}
     .sc-card.flip{grid-template-columns:1.4fr 1fr;}
     .arch-grid{grid-template-columns:repeat(2,1fr);}
+    .sc-nav--left{left:-12px;}
+    .sc-nav--right{right:-12px;}
 }
 @media(max-width:900px){
     .showcase-outer,.archive-outer{padding:0 24px;}
@@ -285,4 +332,13 @@
     .arch-grid{grid-template-columns:1fr;}
     .showcase-head{flex-direction:column;align-items:flex-start;}
     .showcase-lede{text-align:left;max-width:100%;}
+    .sc-nav{width:40px;height:40px;}
+    .sc-nav--left{left:-8px;}
+    .sc-nav--right{right:-8px;}
+}
+@media(max-width:480px){
+    .showcase-outer,.archive-outer{padding:0 16px;}
+    .sc-nav--left{left:8px;}
+    .sc-nav--right{right:8px;}
+    .sc-nav{width:36px;height:36px;background:rgba(10,9,6,.85);backdrop-filter:blur(6px);}
 }
