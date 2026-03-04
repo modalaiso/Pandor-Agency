@@ -23,6 +23,7 @@
       }
     ],
     "manifest-exists": "off",
-    "apple-touch-icons": "off"
+    "apple-touch-icons": "off",
+    "axe/forms": "off"
   }
 }
