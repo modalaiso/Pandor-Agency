@@ -342,3 +342,25 @@
     .sc-nav--right{right:8px;}
     .sc-nav{width:36px;height:36px;background:rgba(10,9,6,.85);backdrop-filter:blur(6px);}
 }
+
+.sc-list::before {
+    left: -25px;
+    background: linear-gradient(to right, var(--bg), transparent);
+}.sc-list::after {
+    right: -25px;
+    background: linear-gradient(to left, var(--bg), transparent);
+}
+.sc-list::before, .sc-list::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 140px;
+    z-index: 2;
+    pointer-events: none;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
