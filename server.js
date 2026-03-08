@@ -10,7 +10,7 @@ app.use(express.static(publicDir));
 app.get('/:name', (req, res) => {
   const file = path.join(publicDir, req.params.name + '.html');
   res.sendFile(file, err => {
-    if (err) res.status(404).send('Page non trouvée');
+    if (err) res.sendFile(path.join(publicDir, '404.html'));
   });
 });
 
