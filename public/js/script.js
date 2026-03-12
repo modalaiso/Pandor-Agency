@@ -150,7 +150,7 @@ if (window.innerWidth > 900) {
 }
 
 /* CURSOR */
-const cur = document.getElementById('cur');
+/*const cur = document.getElementById('cur');
 const curRing = document.getElementById('curRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
@@ -158,7 +158,7 @@ document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cu
     rx = lerp(rx, mx, 0.11); ry = lerp(ry, my, 0.11);
     curRing.style.left=rx+'px'; curRing.style.top=ry+'px';
     requestAnimationFrame(animRing);
-})();
+})();*/
 
 /* NAV SHRINK */
 const navbar = document.getElementById('navbar');
