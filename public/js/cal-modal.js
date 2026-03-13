@@ -135,7 +135,7 @@
     // Cible les boutons et liens qui contiennent le texte (insensible à la casse)
     document.querySelectorAll('a, button').forEach(el => {
       const text = el.textContent.trim().toLowerCase();
-      if (text.includes('réserver un appel') || text.includes('reserver un appel') || text.includes('commencer') || text.includes('commencez votre projet')) {
+      if (text.includes('réserver un appel') || text.includes('reserver un appel')) {
         // Empêche le lien # de scroller en haut
         el.addEventListener('click', e => {
           e.preventDefault();
