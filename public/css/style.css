@@ -69,30 +69,6 @@ button {
   cursor: pointer;
 }
 
-/* CURSOR */
-/*.cursor {
-  position: fixed;
-  width: 10px; height: 10px;
-  background: var(--gold);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width .25s, height .25s;
-}
-.cursor-ring {
-  position: fixed;
-  width: 38px; height: 38px;
-  border: 1px solid rgba(212,168,83,0.45);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%,-50%);
-  transition: width .3s, height .3s, border-color .3s;
-}
-body:has(a:hover) .cursor { width:18px; height:18px; }
-body:has(a:hover) .cursor-ring { width:60px; height:60px; border-color:rgba(212,168,83,.2); }*/
-
 /* NOISE */
 body::before {
   content:'';
@@ -426,7 +402,7 @@ section { padding:120px 60px; }
 /* PRICING */
 .pricing-inner { max-width:1100px; margin:0 auto; }
 .pricing-header { text-align:center; margin-bottom:80px; }
-.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; }
+.pricing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; align-items:stretch; }
 .pricing-card {
   background:var(--surface); border:1px solid var(--border); border-radius:24px;
   padding:44px 36px; position:relative;
@@ -436,20 +412,32 @@ section { padding:120px 60px; }
 .pricing-card.visible { opacity:1; transform:translateY(0); }
 .pricing-card:hover { transform:translateY(-7px); box-shadow:0 40px 80px rgba(0,0,0,.4); }
 .pricing-card.featured { border-color:rgba(212,168,83,.4); background:linear-gradient(160deg,#1c1810 0%,#141009 100%); }
-.pricing-card.featured::before { content:'Populaire'; position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--gold); color:#0a0905; font-size:12px; font-weight:700; padding:4px 20px; border-radius:999px; letter-spacing:.05em; }
+.pricing-card.featured::before { content:'Recommandé'; position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--gold); color:#0a0905; font-size:12px; font-weight:700; padding:4px 20px; border-radius:999px; letter-spacing:.05em; }
 .pricing-name { font-family:var(--font-display); font-size:28px; font-weight:600; margin-bottom:8px; }
-.pricing-desc { font-size:13px; color:var(--muted); margin-bottom:32px; line-height:1.6; }
+.pricing-desc { font-size:13px; color:var(--muted); line-height:1.6; }
 .pricing-price { font-family:var(--font-display); font-size:56px; font-weight:300; color:var(--gold); line-height:1; margin-bottom:8px; }
 .pricing-price span { font-size:20px; font-weight:400; vertical-align:top; margin-top:12px; display:inline-block; }
 .pricing-period { font-size:13px; color:var(--muted); margin-bottom:36px; }
-.pricing-features { list-style:none; margin-bottom:40px; }
-.pricing-features li { font-size:14px; color:var(--muted); padding:10px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+.pricing-features { list-style:none; margin-bottom:10px; background: #00000045; padding: 40px; border-radius: 25px; }
+.pricing-features li { font-size:14px; color:var(--muted); padding:10px 0; display:flex; align-items:center; gap:10px; }
 .pricing-features li::before { content:'✓'; color:var(--gold); font-size:14px; flex-shrink:0; }
-.btn-pricing { display:block; text-align:center; padding:14px; border-radius:999px; text-decoration:none; font-size:14px; font-weight:500; transition:all .3s; }
+.btn-pricing { display:block; text-align:center; padding:14px; border-radius:999px; margin-bottom: 20px; text-decoration:none; font-size:14px; font-weight:500; transition:all .3s; }
 .btn-pricing-outline { border:1px solid var(--border); color:var(--white); }
 .btn-pricing-outline:hover { border-color:var(--gold); color:var(--gold); background:rgba(212,168,83,.05); }
 .btn-pricing-solid { background:var(--gold); color:#0a0905; border-top: 2px solid var(--gold-light); }
 .btn-pricing-solid:hover { background:var(--gold-light); transform:translateY(-1px); box-shadow:0 10px 30px rgba(212,168,83,.3); }
+.wrap { padding: 1rem 0; font-family: var(--font-body); }
+.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-radius: 20px; background: #00000045; user-select: none; }
+.toggle-left { display: flex; align-items: center; gap: 14px; }
+.toggle-badge { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; background: linear-gradient(-45deg, var(--gold), var(--gold-light), var(--gold)); color: var(--bg); padding: 5px 10px; border-radius: 8px; }
+.toggle-name { font-size: 15px; font-weight: 500; color: var(--muted); }
+.toggle-price { font-size: 13px; color: var(--gold); }
+.switch { position: relative; width: 44px; height: 24px; flex-shrink: 0; cursor: pointer; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; inset: 0; background: var(--border); border-radius: 999px; transition: background .25s; }
+.slider::before { content: ''; position: absolute; width: 18px; height: 18px; background: white; border-radius: 50%; top: 3px; left: 3px; transition: transform .25s; }
+input:checked + .slider { background: #d4a953; }
+input:checked + .slider::before { transform: translateX(20px); }
 
 /* TESTIMONIALS */
 .testimonials-inner { max-width:1100px; margin:0 auto; }
@@ -518,8 +506,6 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
 }
 
 @media(max-width:900px) {
-  *{cursor:auto}
-  .cursor,.cursor-ring{display:none}
   nav{padding:16px 24px; top:0; left:0; right:0; z-index:500; border-radius:0;} nav.scrolled{padding:16px 24px; top:0; left:0; right:0; border-radius:0; border:none; border-bottom:1px solid var(--border);}
   .nav-links{display:none}
   section{padding:80px 24px}
@@ -532,6 +518,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .portfolio-grid{grid-template-columns:1fr}
   .portfolio-card.large{grid-row:auto}
   .pricing-grid{grid-template-columns:1fr}
+  .toggle-badge { display: none; }
   .stats-inner{grid-template-columns:1fr}
   .stat-item{border-right:none;}
   .testimonials-grid{grid-template-columns:1fr}

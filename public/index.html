@@ -106,9 +106,6 @@
 
 <body>
 
-  <!--<div class="cursor" id="cur"></div>
-  <div class="cursor-ring" id="curRing"></div>-->
-
   <!-- NAV -->
   <nav id="navbar">
     <a href="/" alt="Logo Pandor" class="nav-logo" style="font-family: 'Raleway', sans-serif; font-weight: 700;"><img src="assets/logo.svg" class="logo" alt="Logo Pandor" width="100" height="100">Pandor</a>
@@ -784,24 +781,53 @@
       <div class="pricing-header">
         <div class="section-label">Tarifs</div>
         <h2 class="section-title reveal">Un investissement, pas<br /><em>une dépense</em></h2>
-        <p style="color:var(--muted);margin-top:16px;font-weight:300;font-size:16px">Une seule réservation couvre le coût de votre page. Le reste, c'est du profit pur.</p>
+        <p style="color:var(--muted);margin-top:16px;font-weight:300;font-size:16px">Une table vide par soir, c'est plus que le coût de votre page. Par mois.</p>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-name">Starter</div>
           <div class="pricing-desc">Pour les restaurants qui démarrent leur présence en ligne.</div>
-          <div class="pricing-price">95 000<span>FCFA</span></div>
-          <div class="pricing-period">Paiement unique · Livraison 7 jours</div>
+          <div class="pricing-price">100 000<span>FCFA</span></div>
+          <div class="pricing-period">Paiement en 2 fois · Livraison 7 jours</div>
+          <a style="display:flex; justify-content: center; align-items:center; gap:8px;" href="#" alt="Nous contacter" class="btn-pricing btn-pricing-outline">Commencer 
+            <svg style="width: 18px;"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-right-icon lucide-arrow-right">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
           <ul class="pricing-features">
             <li>Landing page 1 page complète</li>
             <li>Copywriting inclus</li>
             <li>Design mobile-first</li>
             <li>Bouton réservation intégré</li>
             <li>SEO de base</li>
-            <li>1 révision incluse</li>
+            <li>2 révisions incluses</li>
           </ul>
-          <a style="display:flex; justify-content: center; align-items:center; gap:8px;" href="#" alt="Nous contacter"
-            class="btn-pricing btn-pricing-outline">Commencer 
+          <div class="wrap">
+            <div class="toggle-row" onclick="toggle()">
+              <div class="toggle-left">
+                <span class="toggle-badge">Add-on</span>
+                <div>
+                  <div class="toggle-name">Support & Maintenance</div>
+                  <div class="toggle-price">15 000 FCFA / mois</div>
+                </div>
+              </div>
+              <label class="switch" onclick="event.stopPropagation()">
+                <input type="checkbox" id="chk" onchange="toggle()">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-name">Pro</div>
+          <div class="pricing-desc">La solution complète pour maximiser vos réservations.</div>
+          <div class="pricing-price">160 000<span>FCFA</span></div>
+          <div class="pricing-period">Paiement en 2 fois · Livraison 10 jours</div>
+          <a style="display:flex; justify-content: center; align-items:center; gap:8px;" href="#" alt="Nous contacter" class="btn-pricing btn-pricing-solid">Commencer 
             <svg style="width: 18px;"
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -810,54 +836,29 @@
               <path d="m12 5 7 7-7 7" />
             </svg>
           </a>
-        </div>
-        <div class="pricing-card featured">
-          <div class="pricing-name">Pro</div>
-          <div class="pricing-desc">La solution complète pour maximiser vos réservations.</div>
-          <div class="pricing-price">145 000<span>FCFA</span></div>
-          <div class="pricing-period">Paiement unique · Livraison 7 jours</div>
-          <ul class="pricing-features">
+          <ul class="pricing-features" style="border-color: rgba(212, 168, 83, .4);">
             <li>Tout Starter inclus</li>
             <li>Système de réservation avancé</li>
             <li>Menu digital interactif</li>
             <li>SEO local complet</li>
             <li>Google Business optimisé</li>
-            <li>Révisions illimitées</li>
+            <li>Révisions pendant 14 jours</li>
           </ul>
-          <a style="display:flex; justify-content: center; align-items:center; gap:8px;" href="#" alt="Nous contacter"
-            class="btn-pricing btn-pricing-solid">Commencer 
-            <svg style="width: 18px;"
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-arrow-right-icon lucide-arrow-right">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-        <div class="pricing-card">
-          <div class="pricing-name">Premium</div>
-          <div class="pricing-desc">Pour les restaurants ambitieux qui veulent dominer leur marché local.</div>
-          <div class="pricing-price">75 000<span>FCFA</span><span style="font-size:18px">/mois</span></div>
-          <div class="pricing-period">Engagement 6 mois · Sans surprises</div>
-          <ul class="pricing-features">
-            <li>Tout Premium inclus</li>
-            <li>Optimisation continue A/B</li>
-            <li>Rapport analytics mensuel</li>
-            <li>Mise à jour carte saison</li>
-            <li>Campagnes Google Ads</li>
-            <li>Support prioritaire 7j/7</li>
-          </ul>
-          <a style="display:flex; justify-content: center; align-items:center; gap:8px;" href="#" alt="Nous contacter"
-            class="btn-pricing btn-pricing-outline">Commencer 
-            <svg style="width: 18px;"
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-arrow-right-icon lucide-arrow-right">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
+          <div class="wrap">
+            <div class="toggle-row" onclick="toggle()">
+              <div class="toggle-left">
+                <span class="toggle-badge">Add-on</span>
+                <div>
+                  <div class="toggle-name">Support & Maintenance</div>
+                  <div class="toggle-price">15 000 FCFA / mois</div>
+                </div>
+              </div>
+              <label class="switch" onclick="event.stopPropagation()">
+                <input type="checkbox" id="chk" onchange="toggle()">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -917,7 +918,7 @@
       </div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Combien de temps pour livrer ma landing page ?<span class="faq-icon">+</span></button>
         <div class="faq-a">
-          <p>Nous livrons en 7 jours. Dès la validation de votre brief et du paiement, notre équipe se met au travail immédiatement.</p>
+          <p>Nous livrons en 7 jours pour l'offre starter et 10 jours pour l'offre pro. Dès la validation de votre brief et du paiement, notre équipe se met au travail immédiatement.</p>
         </div>
       </div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Quelle différence entre une landing page et un site complet ?<span class="faq-icon">+</span></button>
