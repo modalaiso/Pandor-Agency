@@ -230,7 +230,7 @@ if (pc) pcObs.observe(pc);
 /* TEXT INK REVEAL: gray → white on scroll */
 function checkInk() {
     const vh = window.innerHeight;
-    document.querySelectorAll('.ink-line').forEach(el => {
+    document.querySelectorAll('.ink-line,.ink-line-g').forEach(el => {
         const r = el.getBoundingClientRect();
         // Light up when element center passes 60% of viewport
         if (r.top + r.height / 2 < vh * 0.78) el.classList.add('lit');

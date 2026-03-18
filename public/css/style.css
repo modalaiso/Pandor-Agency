@@ -277,7 +277,9 @@ section { padding:120px 60px; }
   color:#2e2a22;
   transition:color .7s ease;
 }
+.ink-line-g { color:#2e2a22; transition:color .7s ease; }
 .ink-line.lit { color:var(--white); }
+.ink-line-g.lit { color:var(--gold); }
 
 .ink-p {
   color:#2e2a22;
