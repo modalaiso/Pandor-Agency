@@ -522,7 +522,7 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
   .pricing-grid{grid-template-columns:1fr}
   .toggle-badge { display: none; }
   .stats-inner{grid-template-columns:1fr}
-  .stat-item{border-right:none;}
+  .stat-item{border-right:none;padding:0;}
   .testimonials-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;justify-items:left;}
   .footer-bottom{padding:24px;flex-direction:column-reverse;gap:12px;text-align:center}
