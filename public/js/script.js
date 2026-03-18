@@ -1,4 +1,4 @@
-/* ── HERO BLUR-WORD REVEAL ── */
+/* HERO BLUR-WORD REVEAL */
 (function () {
     const h1 = document.querySelector('.hero h1');
     if (!h1) return;
@@ -37,7 +37,7 @@
 })();
 
 
-/* ── SMOOTH SCROLL (souris uniquement) ── */
+/* SMOOTH SCROLL (souris uniquement) */
 if (window.matchMedia('(pointer: fine) and (hover: hover)').matches) {
 
     let pos = window.scrollY;
@@ -124,20 +124,14 @@ if (window.matchMedia('(pointer: fine) and (hover: hover)').matches) {
     }
 }
 
-
-/* ── NAV SHRINK + HIDE/SHOW ── */
+/* NAV SHRINK */
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y <= 0) navbar.classList.remove('scrolled', 'hidden');
-    else if (y > lastScroll && y > 80) navbar.classList.add('hidden');
-    else { navbar.classList.remove('hidden'); navbar.classList.add('scrolled'); }
-    lastScroll = y;
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
 
 
-/* ── REVEAL ── */
+/* REVEAL */
 const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
         if (e.isIntersecting) {
@@ -152,7 +146,7 @@ document.querySelectorAll(
 ).forEach(el => obs.observe(el));
 
 
-/* ── COUNTER ── */
+/* COUNTER */
 const statsEl = document.querySelector('.stats');
 if (statsEl) {
     new IntersectionObserver((entries, o) => {
@@ -176,7 +170,7 @@ if (statsEl) {
 }
 
 
-/* ── PROBLEM CARDS STAGGER ── */
+/* PROBLEM CARDS STAGGER */
 const pc = document.getElementById('problemCards');
 if (pc) {
     new IntersectionObserver((entries, o) => {
@@ -191,7 +185,7 @@ if (pc) {
 }
 
 
-/* ── INK REVEAL ── */
+/* INK REVEAL */
 function checkInk() {
     const vh = window.innerHeight;
     document.querySelectorAll('.ink-line,.ink-line-g').forEach(el =>
@@ -205,7 +199,7 @@ window.addEventListener('scroll', checkInk, { passive: true });
 checkInk();
 
 
-/* ── PARALLAX GLOW ── */
+/* PARALLAX GLOW */
 const heroGlow = document.querySelector('.hero-glow');
 if (heroGlow) {
     document.addEventListener('mousemove', e => {
@@ -216,7 +210,7 @@ if (heroGlow) {
 }
 
 
-/* ── FAQ ── */
+/* FAQ */
 function toggleFaq(btn) {
     const a = btn.nextElementSibling;
     const ic = btn.querySelector('.faq-icon');
@@ -227,7 +221,7 @@ function toggleFaq(btn) {
 }
 
 
-/* ── PAGE TRANSITION ── */
+/* PAGE TRANSITION */
 const overlay = document.createElement('div');
 overlay.id = 'page-overlay';
 document.body.appendChild(overlay);
