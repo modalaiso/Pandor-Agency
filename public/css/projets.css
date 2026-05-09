@@ -9,7 +9,7 @@
     margin-bottom: 64px;
 }
 .showcase-lede {
-    font-size: 14px;
+    font-size: var(--fs-sm);
     color: var(--muted);
     font-weight: 300;
     line-height: 1.8;
@@ -46,10 +46,10 @@
     text-decoration: none;
     opacity: 0; transform: translateY(32px);
     transition:
-        opacity .65s ease,
-        transform .65s ease,
-        border-color .3s,
-        box-shadow .4s;
+        opacity var(--transition-slower),
+        transform var(--transition-slower),
+        border-color var(--transition-base),
+        box-shadow var(--transition-slow);
 }
 .sc-card.visible { opacity:1; transform:translateY(0); }
 .sc-card:hover { border-color: rgba(212,168,83,.3); box-shadow: 0 32px 80px rgba(0,0,0,.5); }
@@ -64,14 +64,14 @@
 }
 .sc-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 .sc-year {
-    font-size: 11px; font-weight: 600;
+    font-size: var(--fs-xs); font-weight: 600;
     color: var(--gold); opacity: .55; letter-spacing: .12em;
 }
 .sc-type {
-    font-size: 11px; color: var(--muted);
+    font-size: var(--fs-xs); color: var(--muted);
     letter-spacing: .05em;
     padding: 3px 12px;
-    border: 1px solid var(--border); border-radius: 999px;
+    border: 1px solid var(--border); border-radius: var(--radius-full);
 }
 .sc-title {
     font-family: var(--font-display);
@@ -82,16 +82,16 @@
 }
 .sc-title em { font-style: italic; color: var(--gold); }
 .sc-desc {
-    font-size: 14px; color: var(--muted); font-weight: 300;
+    font-size: var(--fs-sm); color: var(--muted); font-weight: 300;
     line-height: 1.8; margin-bottom: 28px;
 }
 .sc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
 .sc-tag {
-    font-size: 11px; letter-spacing: .05em;
+    font-size: var(--fs-xs); letter-spacing: .05em;
     padding: 5px 14px;
-    border-radius: 999px; border: 1px solid var(--border);
+    border-radius: var(--radius-full); border: 1px solid var(--border);
     color: var(--muted);
-    transition: border-color .25s, color .25s;
+    transition: border-color var(--transition-base), color var(--transition-base);
 }
 .sc-card:hover .sc-tag { border-color: rgba(212,168,83,.22); color: rgba(212,168,83,.65); }
 .sc-cta {
@@ -101,7 +101,7 @@
     background: linear-gradient(45deg, var(--bg), transparent);
     border: 1px solid var(--border);
     border-radius: 10px;
-    transition: color .2s;
+    transition: color var(--transition-fast);
 }
 .sc-web-link {
     padding: 7px;
@@ -112,11 +112,11 @@
     align-items: center;
     border: 1px solid var(--border);
     border-radius: 10px;
-    transition: color .2s;
+    transition: color var(--transition-fast);
 }
 .sc-web-link:hover { color: var(--gold); }
 .sc-cta:hover { color: var(--gold);}
-.sc-cta svg { transition: transform .2s; }
+.sc-cta svg { transition: transform var(--transition-fast); }
 .sc-cta:hover svg { transform: translateX(3px); }
 
 /* carousel nav buttons */
@@ -135,7 +135,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background .2s, border-color .2s, opacity .2s;
+    transition: background var(--transition-fast), border-color var(--transition-fast), opacity var(--transition-fast);
 }
 .sc-nav:hover {
     background: rgba(212,168,83,.1);

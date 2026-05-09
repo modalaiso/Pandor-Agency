@@ -1,23 +1,12 @@
-:root {
-  --bg: #0a0905;
-  --bg2: #100e09;
-  --surface: #161410;
-  --border: #ffdc781a;
-  --gold: #d4a953;
-  --gold-light: #F0C97A;
-  --white: #F5F0E8;
-  --muted: #7a7060;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
-}
+/* Variables CSS définies dans root.css */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: auto; }
 body {
   background: var(--bg);
   color: var(--white);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
   overflow-x: hidden;
 }
 
@@ -41,7 +30,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 2px solid transparent;
   background-clip: content-box;
 }
@@ -62,11 +51,16 @@ img {
 }
 
 a {
-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
 }
 
 button {
   cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
 }
 
 /* NOISE */
@@ -85,20 +79,20 @@ body::before {
 nav {
   position:fixed; top:0rem; left:0rem; right:0rem; z-index:500;
   display:flex; align-items:center; justify-content:space-around;
-  padding:20px 60px;
-  background:#0a0905c9;
+  padding: var(--space-sm) var(--space-xl);
+  background: rgba(10, 9, 5, 0.79);
   backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
-  transition:.4s ease;
+  transition: var(--transition-slow);
   border-color: var(--border);
 }
-nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 0; background:#0a0905c9;border:1px solid var(--border);border-radius:999px; }
+nav.scrolled { right:18rem; left:18rem; top:3rem; padding:13px 0; background:rgba(10, 9, 5, 0.79);border:1px solid var(--border);border-radius:var(--radius-full); }
 /*nav.hidden { top: -100px; }*/
 .nav-logo { font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--gold); letter-spacing:.05em; text-decoration:none;display: flex;align-items: center;gap: 9px; }
 .nav-links { display:flex; gap:40px; list-style:none; }
-.nav-links a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:400; transition:color .2s; }
+.nav-links a { color:var(--muted); text-decoration:none; font-size:var(--fs-sm); font-weight:400; transition:color var(--transition-fast); }
 .nav-links a:hover { color:var(--white); }
-.btn-nav { background:var(--gold); color:#0a0905; font-weight:500; font-size:14px; padding:10px 22px; border-radius:999px; text-decoration:none; transition:background .2s,transform .2s; border:none; border-top:1px solid var(--gold-light); font-family: var(--font-body);display:flex; justify-content:center; align-items:center; gap:8px;}
+.btn-nav { background:var(--gold); color:var(--text-invert); font-weight:500; font-size:var(--fs-sm); padding:10px 22px; border-radius:var(--radius-full); text-decoration:none; transition:background var(--transition-fast),transform var(--transition-fast); border:none; border-top:1px solid var(--gold-light); font-family: var(--font-body);display:flex; justify-content:center; align-items:center; gap:8px;}
 .btn-nav:hover { background:var(--gold-light); transform:translateY(-1px); }
 .menu-toggle {
   display: none;
@@ -612,3 +606,45 @@ footer { border-top:1px solid var(--border); padding:60px; display:grid; grid-te
 .status-dot{width:7px;height:7px;border-radius:50%;background:#d4a953;box-shadow:0 0 0 3px #F0C97A40;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+
+/* UTILITAIRES — REMPLACEMENT STYLES INLINE */
+
+/* Logo avec police alternative */
+.logo-font-alt {
+  font-family: var(--font-alt);
+}
+
+/* Flexbox centré */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images avec fade */
+.img-fade {
+  opacity: 0.7;
+}
+
+/* Menu CTA wrapper */
+.menu-cta-wrapper {
+  margin: var(--space-sm) var(--space-lg);
+}
+
+/* Font alternative - Chewy */
+.font-chewy {
+  font-family: 'Chewy', sans-serif;
+  font-size: 35px;
+}
+
+/* Texte avec glow doré */
+.text-glow {
+  color: var(--gold-light);
+  text-shadow: 0 0 10px var(--gold-light);
+}
+
+/* Titre avec glow doré sur fond sombre */
+.title-glow {
+  color: var(--gold);
+  text-shadow: 0 0 10px var(--bg);
+}

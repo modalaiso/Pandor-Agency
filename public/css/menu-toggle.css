@@ -21,7 +21,7 @@
   background: var(--gold);
   transform-origin: center;
   border-radius: 20px;
-  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.35s cubic-bezier(0.77, 0, 0.175, 1), width 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform var(--transition-base), opacity var(--transition-base), width var(--transition-base);
 }
 
 
@@ -37,12 +37,12 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: #0a090550;
+  background: var(--bg-overlay);
   backdrop-filter: blur(3px);
   z-index: 499;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity var(--transition-slower);
 }
 
 .nav-overlay.is-visible {
@@ -59,11 +59,11 @@
   top: 60px;
   right: 0;
   width: 100%;
-  background: #0a090550;
+  background: var(--bg-overlay);
   z-index: 499;
   padding: 1.5rem 0;
   transform: translateY(-120%);
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform var(--transition-slower);
   backdrop-filter: blur(24px) saturate(140%);
   border-bottom: 1px solid var(--border);
 }
@@ -84,12 +84,12 @@
   gap: 10px;
   padding: 10px 38px;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--fs-base);
   font-weight: 400;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: -0.02em;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
   position: relative;
 }
 

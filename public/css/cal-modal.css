@@ -4,7 +4,7 @@
 .cal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(5, 4, 2, 0.82);
+  background: var(--bg-overlay-dark);
   backdrop-filter: blur(5px) saturate(120%);
   -webkit-backdrop-filter: blur(5px) saturate(120%);
   z-index: 900;
@@ -14,7 +14,7 @@
   padding: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity var(--transition-slow);
 }
 
 .cal-overlay.is-open {
@@ -28,7 +28,7 @@
   width: 100%;
   max-width: 1100px;
   height: min(80vh, 700px);
-  background: #0f0f0f;
+  background: var(--bg2);
   border: 1px solid rgba(212, 168, 83, 0.18);
   border-radius: 20px;
   overflow: hidden;
@@ -78,7 +78,7 @@
 
 .cal-modal-label {
   font-family: var(--font-body, 'DM Sans', sans-serif);
-  font-size: 13px;
+  font-size: var(--fs-xs);
   font-weight: 400;
   color: rgba(212, 168, 83, 0.7);
   letter-spacing: 0.08em;
@@ -97,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  transition: all var(--transition-base);
   flex-shrink: 0;
 }
 
@@ -138,8 +138,8 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  background: #0f0f0f;
-  transition: opacity 0.4s ease;
+  background: var(--bg2);
+  transition: opacity var(--transition-slow);
   z-index: 2;
 }
 
@@ -163,7 +163,7 @@
 
 .cal-loading-text {
   font-family: var(--font-body, 'DM Sans', sans-serif);
-  font-size: 13px;
+  font-size: var(--fs-xs);
   color: rgba(122, 112, 96, 0.6);
   letter-spacing: 0.05em;
 }

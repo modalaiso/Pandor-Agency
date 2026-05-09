@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sirok | Pandor Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/wise-stingray.css" />
   <link rel="stylesheet" href="../css/moody-owl.css" />
   <link rel="stylesheet" href="../css/menu-toggle.css" />
-  <link rel="stylesheet" href="css/cal-modal.css" />
+  <link rel="stylesheet" href="../css/cal-modal.css" />
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
@@ -110,7 +111,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="/" class="nav-logo" style="font-family: 'Raleway', sans-serif;" alt="Logo Pandor"><img src="../assets/logo.svg" class="logo" alt="Logo Pandor" width="100" height="100">Pandor</a>
+    <a href="/" class="nav-logo logo-font-alt" alt="Logo Pandor"><img src="../assets/logo.svg" class="logo" alt="Logo Pandor" width="100" height="100">Pandor</a>
     <ul class="nav-links">
       <li><a href="/#services" alt="Services">Services</a></li>
       <li><a href="/#process" alt="Processus">Processus</a></li>
@@ -150,8 +151,8 @@
         <li class="nav-menu__item"><a href="/#pricing" alt="Tarifs">Tarifs</a></li>
         <li class="nav-menu__item"><a href="/#faq" alt="FAQ">FAQ</a></li>
       </ul>
-      <a href="" alt="Réserver un appel" style="margin: 10px 38px;">
-        <button class="btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center;">Réserver un appel
+      <a href="" alt="Réserver un appel" class="menu-cta-wrapper">
+        <button class="btn-primary flex-center">Réserver un appel
           <svg
             style="width: 18px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -170,7 +171,7 @@
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
 
-    <div class="badge" style="padding: 6px 18px;">
+    <div class="badge" style="padding: var(--space-xs) var(--space-md);">
       <div class="status-dot"></div>
       <span class="badge-text">En cours de construction</span>
     </div>
@@ -184,7 +185,7 @@
     <p class="reveal">3 places disponibles ce mois-ci. Appel de 20 minutes, on analyse votre situation et vous donne un plan d'action concret.</p>
     <div class="cta-btns reveal">
       <a href="" alt="Réserver un appel"><button class="btn-primary"
-        style="display:flex; justify-content: center; align-items:center; gap:8px;">Réserver un appel <svg
+        style="display: flex; justify-content: center; align-items: center; gap: var(--space-sm);">Réserver un appel <svg
           style="width: 18px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           class="lucide lucide-arrow-right-icon lucide-arrow-right">
@@ -198,7 +199,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-col">
-      <div class="footer-logo"><a href="/" alt="Accueil" class="nav-logo" style="font-family: 'Raleway', sans-serif;"><img
+      <div class="footer-logo"><a href="/" alt="Accueil" class="nav-logo logo-font-alt"><img
             src="../assets/logo.svg" class="logo" alt="Logo Pandor" width="100" height="100">Pandor</a></div>
       <p class="footer-tagline">L'agence spécialisée en landing pages pour restaurants.</p>
     </div>
@@ -221,7 +222,7 @@
     </div>
     <div class="footer-col">
       <h5>Réseaux sociaux</h5>
-      <ul style="display:flex; gap:10px;">
+      <ul style="display: flex; gap: var(--space-sm);">
         <li><a class="social-network" href="#" alt="Instagram" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a></li>
         <li><a class="social-network" href="https://www.linkedin.com/company/pandoragency" alt="LinkedIn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
         <li><a class="social-network" href="#" alt="Twitter" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M 17.476562 2.9902344 A 1.0001 1.0001 0 0 0 16.724609 3.3691406 L 12.509766 8.5546875 L 9.0566406 3.7714844 C 8.7066406 3.2874844 8.1458281 3 7.5488281 3 L 4.078125 3 C 3.420125 3 3.0388281 3.7462969 3.4238281 4.2792969 L 9.3339844 12.462891 L 3.7246094 19.369141 A 1.0001 1.0001 0 1 0 5.2753906 20.630859 L 10.548828 14.142578 L 14.943359 20.228516 C 15.293359 20.712516 15.854172 21 16.451172 21 L 19.921875 21 C 20.579875 21 20.961172 20.253703 20.576172 19.720703 L 13.724609 10.232422 L 18.275391 4.6308594 A 1.0001 1.0001 0 0 0 17.476562 2.9902344 z M 6.4101562 5 L 7.4765625 5 L 17.587891 19 L 16.523438 19 L 6.4101562 5 z"></path></svg></a></li>
