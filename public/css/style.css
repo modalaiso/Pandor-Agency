@@ -251,7 +251,7 @@ section { padding:120px 60px; }
   font-size:12px; font-weight:500; color:var(--gold);
   letter-spacing:.15em; text-transform:uppercase; margin-bottom:24px;
 }
-.section-label::before { content:''; display:block; width:30px; height:1px; background:var(--gold); }
+/*.section-label::before { content:''; display:block; width:30px; height:1px; background:var(--gold); }*/
 .section-title { font-family:var(--font-display); font-size:clamp(36px,4.5vw,64px); font-weight:300; line-height:1.1; letter-spacing:-.01em; }
 .section-title em { font-style:italic; color:var(--gold); }
 
